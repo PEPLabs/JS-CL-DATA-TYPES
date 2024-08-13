@@ -28,11 +28,12 @@ function nullMethod() {
 // Object Datatype
 // Collections of properties where each property is a key-value pair.
 
-function objectMethod() {
-    // TODO: Declare and initialize an object variable named 'myObject' with properties name and age
+function objectMethod(name, age) {
+    // TODO: Declare and initialize an object variable named 'myObject' with properties name and age, assign it with the parameters accordingly.
     let outputElement = document.getElementById("output");
     outputElement.textContent = `Object: ${JSON.stringify("Replace me with the variable you've just created")}`;
 }
+
 
 // Array Datatype
 // List-like objects used to store multiple values in a single variable.
