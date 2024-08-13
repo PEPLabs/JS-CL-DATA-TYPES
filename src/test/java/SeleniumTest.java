@@ -32,9 +32,6 @@ public class SeleniumTest {
         
         options.addArguments("headless");
           webDriver = new ChromeDriver(options);
-       
-
-        // Open the HTML file
         webDriver.get(path);
     }
 
