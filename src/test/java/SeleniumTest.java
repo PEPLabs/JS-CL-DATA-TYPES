@@ -1,4 +1,5 @@
 import java.io.File;
+import java.time.Duration;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
@@ -68,12 +69,16 @@ public class SeleniumTest {
     }
     
     @Test
-    public void testObject() {
-        JavascriptExecutor js = (JavascriptExecutor) webDriver;
-        js.executeScript("objectMethod();");
-        WebElement output = webDriver.findElement(By.id("output"));
-        Assertions.assertEquals("Object: {\"name\":\"John\",\"age\":30}", output.getText());
-    }
+public void testObject() {
+    JavascriptExecutor js = (JavascriptExecutor) webDriver;
+    js.executeScript("objectMethod('John', 30);");
+
+    WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
+    wait.until(ExpectedConditions.textToBe(By.id("output"), "Object: {\"name\":\"John\",\"age\":30}"));
+
+    WebElement output = webDriver.findElement(By.id("output"));
+    Assertions.assertEquals("Object: {\"name\":\"John\",\"age\":30}", output.getText());
+}
     
     @Test
     public void testArray() {
