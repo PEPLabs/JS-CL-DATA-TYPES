@@ -1,5 +1,4 @@
 import java.io.File;
-import java.time.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
@@ -10,8 +9,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
 public class SeleniumTest {
@@ -50,10 +47,6 @@ public class SeleniumTest {
     public void testNumber() {
         JavascriptExecutor js = (JavascriptExecutor) webDriver;
         js.executeScript("numberMethod();");
-    
-        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10) ); // Wait for up to 10 seconds
-        wait.until(ExpectedConditions.textToBe(By.id("output"), "Number: 3.14"));
-    
         WebElement output = webDriver.findElement(By.id("output"));
         Assertions.assertEquals("Number: 3.14", output.getText());
     }
@@ -62,10 +55,6 @@ public class SeleniumTest {
     public void testUndefined() {
         JavascriptExecutor js = (JavascriptExecutor) webDriver;
         js.executeScript("undefinedMethod();");
-    
-        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.textToBe(By.id("output"), "Undefined: undefined"));
-    
         WebElement output = webDriver.findElement(By.id("output"));
         Assertions.assertEquals("Undefined: undefined", output.getText());
     }
@@ -74,10 +63,6 @@ public class SeleniumTest {
     public void testNull() {
         JavascriptExecutor js = (JavascriptExecutor) webDriver;
         js.executeScript("nullMethod();");
-    
-        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.textToBe(By.id("output"), "Null: null"));
-    
         WebElement output = webDriver.findElement(By.id("output"));
         Assertions.assertEquals("Null: null", output.getText());
     }
@@ -86,10 +71,6 @@ public class SeleniumTest {
     public void testObject() {
         JavascriptExecutor js = (JavascriptExecutor) webDriver;
         js.executeScript("objectMethod();");
-    
-        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.textToBe(By.id("output"), "Object: {\"name\":\"John\",\"age\":30}"));
-    
         WebElement output = webDriver.findElement(By.id("output"));
         Assertions.assertEquals("Object: {\"name\":\"John\",\"age\":30}", output.getText());
     }
@@ -97,11 +78,7 @@ public class SeleniumTest {
     @Test
     public void testArray() {
         JavascriptExecutor js = (JavascriptExecutor) webDriver;
-        js.executeScript("arrayMethod();");
-    
-        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.textToBe(By.id("output"), "Array: [1,2,3,4,5]"));
-    
+        js.executeScript("arrayMethod();");    
         WebElement output = webDriver.findElement(By.id("output"));
         Assertions.assertEquals("Array: [1,2,3,4,5]", output.getText());
     }
