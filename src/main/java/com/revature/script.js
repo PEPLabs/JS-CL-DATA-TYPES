@@ -1,3 +1,5 @@
+// IMPORTANT: you are required to use DOM Manipulation to display results on the webpage for each function.
+
 // Number Datatype
 // Represents both integers and floating-point numbers.
 
