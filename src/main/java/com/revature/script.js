@@ -1,79 +1,34 @@
-// Task 1: Integer Datatype
+// Number Datatype
+// Represents both integers and floating-point numbers.
 
-// TODO: Create an integer variable named 'myInteger' and assign it an integer value of 619
-function IntegerMethod() {
-
-    let outputElement = document.getElementById("output");
-    outputElement.textContent = "replace me with the variable you've created";
-    return "replace me with the variable you've created";
+function numberMethod() {   
+    // TODO: Declare and initialize a number variable named 'myNumber' with a value of 3.14
 }
 
-// Task 2: Float Datatype
+// Undefined Datatype
+// Indicates that a variable has not been assigned a value.
 
-// TODO: Create a float variable named 'myFloat' and assign it a floating-point value of 3.14
-function FloatMethod() {
-
-    let outputElement = document.getElementById("output");
-    outputElement.textContent = "replace me with the variable you've created";
-    return "replace me with the variable you've created";
+function undefinedMethod() {
+    // TODO: Declare an undefined variable named 'myUndefined' and display its type
 }
 
-// Task 3: Boolean Datatype
+// Null Datatype
+// Represents the intentional absence of any object value.
 
-// TODO: Create a boolean variable named 'myBoolean' and assign it a value of false
-function BooleanMethod() {
-
-    let outputElement = document.getElementById("output");
-    outputElement.textContent = "replace me with the variable you've created";
-    return "replace me with the variable you've created";
+function nullMethod() {
+    // TODO: Declare a null variable named 'myNull' and display its value
 }
 
-// Task 4: String Datatype
+// Object Datatype
+// Collections of properties where each property is a key-value pair.
 
-// TODO: Create a string variable named 'myString' and assign it a string value of "Just started learning JavaScript!".
-function StringMethod() {
-    string1 =  "Just started learning JavaScript!";
-    let outputElement = document.getElementById("output");
-    outputElement.textContent = "replace me with the variable you've created";
-    return "replace me with the variable you've created";
+function objectMethod() {
+    // TODO: Declare and initialize an object variable named 'myObject' with properties name and age
 }
 
-// Task 5: Tuple Datatype
+// Array Datatype
+// List-like objects used to store multiple values in a single variable.
 
-// TODO: Create a tuple variable named 'myTuple' and assign it a tuple value of 10, 20, 30.
-function TupleMethod() {
-
-    let outputElement = document.getElementById("output");
-    outputElement.textContent = JSON.stringify("replace me with the variable you've created");
-    return "replace me with the variable you've created";
-}
-
-// Task 6: List Datatype
-
-// TODO: Create a list variable named 'myList' and assign it a list value of 1, 2, 3, 4, 5.
-function ListMethod() {
-;
-    let outputElement = document.getElementById("output");
-    outputElement.textContent = "replace me with the variable you've created";
-    return "replace me with the variable you've created";
-}
-
-// Task 7: Set Datatype
-
-// TODO: Create a set variable named 'mySet' and assign it a set value of a, b, c.
-function SetMethod() {
-
-    let outputElement = document.getElementById("output");
-    outputElement.textContent = JSON.stringify("replace me with the variable you've created");
-    return "replace me with the variable you've created";
-}
-
-// Task 8: Dictionary Datatype
-
-// TODO: Create a dictionary variable named 'myDict' and assign it a dictionary value of key1: value1, key2: value2
-function DictionaryMethod() {
-
-    let outputElement = document.getElementById("output");
-    outputElement.textContent = JSON.stringify("replace me with the variable you've created");
-    return "replace me with the variable you've created";
+function arrayMethod() {
+    // TODO: Declare and initialize an array variable named 'myArray' with values from 1 to 5
 }
