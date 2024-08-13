@@ -1,10 +1,10 @@
-// IMPORTANT: you are required to use DOM Manipulation to display results on the webpage for each function.
-
 // Number Datatype
 // Represents both integers and floating-point numbers.
 
 function numberMethod() {   
     // TODO: Declare and initialize a number variable named 'myNumber' with a value of 3.14
+    let outputElement = document.getElementById("output");
+    outputElement.textContent = `Number: ${"Replace me with the variable you've just created"}`;
 }
 
 // Undefined Datatype
@@ -12,6 +12,8 @@ function numberMethod() {
 
 function undefinedMethod() {
     // TODO: Declare an undefined variable named 'myUndefined' and display its type
+    let outputElement = document.getElementById("output");
+    outputElement.textContent = `Undefined: ${typeof "Replace me with the variable you've just created"}`;
 }
 
 // Null Datatype
@@ -19,6 +21,8 @@ function undefinedMethod() {
 
 function nullMethod() {
     // TODO: Declare a null variable named 'myNull' and display its value
+    let outputElement = document.getElementById("output");
+    outputElement.textContent = `Null: ${"Replace me with the variable you've just created"}`;
 }
 
 // Object Datatype
@@ -26,6 +30,8 @@ function nullMethod() {
 
 function objectMethod() {
     // TODO: Declare and initialize an object variable named 'myObject' with properties name and age
+    let outputElement = document.getElementById("output");
+    outputElement.textContent = `Object: ${JSON.stringify("Replace me with the variable you've just created")}`;
 }
 
 // Array Datatype
@@ -33,4 +39,6 @@ function objectMethod() {
 
 function arrayMethod() {
     // TODO: Declare and initialize an array variable named 'myArray' with values from 1 to 5
+    let outputElement = document.getElementById("output");
+    outputElement.textContent = `Array: ${JSON.stringify("Replace me with the variable you've just created")}`;
 }
