@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -278,7 +279,7 @@ public class SeleniumTest {
             }
         }
         
-        throw new RuntimeException("Could not find Attributes.html in any expected location: " + 
+        throw new RuntimeException("Could not find index.html in any expected location: " + 
             Arrays.toString(possibleHtmlPaths));
     }
     
@@ -553,95 +554,11 @@ public class SeleniumTest {
     }
 
     @Test
-    public void testImageSrc() {
-        //setup
-        WebElement imageElement = webDriver.findElement(By.id("image"));
-        WebElement buttonElement = webDriver.findElement(By.id("button"));
-        WebElement inputElement = webDriver.findElement(By.id("input"));
-        String url = "./resources/python.png";
-        String placeholder = "./resources/placeholder.png";
-
-        //make sure initial src is present
-        String initial = imageElement.getAttribute("src");
-        Assert.assertEquals(placeholder.substring(placeholder.length() - 26), initial.substring(initial.length() - 26));
-
-        //enter new input and click button
-        inputElement.sendKeys(url);
-        buttonElement.click();
-        String src = imageElement.getAttribute("src");
-
-        //assert src attribute now matches input
-        Assert.assertEquals(url.substring(1), src.substring(src.length() + 1 - url.length()));
-    }
-
-    @Test
-    public void addOneItemTest() {
-        // find input element:
-        WebElement input = webDriver.findElement(By.id("input"));
-
-        // type in input box:
-        input.sendKeys("apples");
-
-        // find submit button and submit:
-        WebElement button = webDriver.findElement(By.id("button"));
-        button.click();
-
-        // find list of items and ensure item is there:
-        List<WebElement> list = webDriver.findElements(By.cssSelector("#list li"));
-
-        Assert.assertEquals(1, list.size());
-
-        Assert.assertEquals("apples", list.get(0).getText());
-    }
-
-    @Test
-    public void addThreeItemsTest() {
-        // find input element:
-        WebElement input = webDriver.findElement(By.id("input"));
-
-        // type in input box:
-        input.sendKeys("apples");
-
-        // find submit button and submit:
-        WebElement button = webDriver.findElement(By.id("button"));
-        button.click();
-
-        // send more items:
-        input.clear();
-        input.sendKeys("bananas");
-        button.click();
-        input.clear();
-        input.sendKeys("oranges");
-        button.click();
-
-        // find list of items and ensure items are there:
-        List<WebElement> list = webDriver.findElements(By.cssSelector("#list li"));
-
-        Assert.assertEquals(3, list.size());
-
-        Assert.assertEquals("apples", list.get(0).getText());
-        Assert.assertEquals("bananas", list.get(1).getText());
-        Assert.assertEquals("oranges", list.get(2).getText());
-    }
-
-    @Test
-    public void emptyListTest() {
-        // find input element:
-        WebElement input = webDriver.findElement(By.id("input"));
-
-        // find list of items and ensure no items:
-        List<WebElement> list = webDriver.findElements(By.cssSelector("#list li"));
-
-        Assert.assertEquals(0, list.size());
-
-    }
-
-    @Test
     public void testNumber() {
         JavascriptExecutor js = (JavascriptExecutor) webDriver;
         js.executeScript("numberMethod();");
         WebElement output = webDriver.findElement(By.id("output"));
-        Assertions.assertEquals("Number: 3.14", output.getText());
+        Assert.assertEquals("Number: 3.14", output.getText());
     }
     
     @Test
@@ -649,7 +566,7 @@ public class SeleniumTest {
         JavascriptExecutor js = (JavascriptExecutor) webDriver;
         js.executeScript("undefinedMethod();");
         WebElement output = webDriver.findElement(By.id("output"));
-        Assertions.assertEquals("Undefined: undefined", output.getText());
+        Assert.assertEquals("Undefined: undefined", output.getText());
     }
     
     @Test
@@ -657,7 +574,7 @@ public class SeleniumTest {
         JavascriptExecutor js = (JavascriptExecutor) webDriver;
         js.executeScript("nullMethod();");
         WebElement output = webDriver.findElement(By.id("output"));
-        Assertions.assertEquals("Null: null", output.getText());
+        Assert.assertEquals("Null: null", output.getText());
     }
     
     @Test
@@ -669,7 +586,7 @@ public void testObject() {
     wait.until(ExpectedConditions.textToBe(By.id("output"), "Object: {\"name\":\"John\",\"age\":30}"));
 
     WebElement output = webDriver.findElement(By.id("output"));
-    Assertions.assertEquals("Object: {\"name\":\"John\",\"age\":30}", output.getText());
+    Assert.assertEquals("Object: {\"name\":\"John\",\"age\":30}", output.getText());
 }
     
     @Test
@@ -677,6 +594,6 @@ public void testObject() {
         JavascriptExecutor js = (JavascriptExecutor) webDriver;
         js.executeScript("arrayMethod();");    
         WebElement output = webDriver.findElement(By.id("output"));
-        Assertions.assertEquals("Array: [1,2,3,4,5]", output.getText());
+        Assert.assertEquals("Array: [1,2,3,4,5]", output.getText());
     }
 }
