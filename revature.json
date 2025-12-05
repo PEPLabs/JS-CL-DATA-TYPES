@@ -1,0 +1,35 @@
+{
+  "type": "java",
+  "testFiles": [
+    {
+      "path": "src/test/java/SeleniumTest.java",
+      "testCases": [
+        {
+          "methodName": "testNumber",
+          "label": "Verify JavaScript number handling output",
+          "description": "Executes the JavaScript function numberMethod() via JavascriptExecutor and asserts that the #output element displays the text 'Number: 3.14'."
+        },
+        {
+          "methodName": "testUndefined",
+          "label": "Verify JavaScript undefined handling output",
+          "description": "Calls undefinedMethod() in the page JavaScript and checks that the #output element renders the text 'Undefined: undefined'."
+        },
+        {
+          "methodName": "testNull",
+          "label": "Verify JavaScript null handling output",
+          "description": "Runs nullMethod() through JavascriptExecutor and asserts that the #output element shows the text 'Null: null'."
+        },
+        {
+          "methodName": "testObject",
+          "label": "Verify JavaScript object handling output",
+          "description": "Invokes objectMethod('John', 30) via JavascriptExecutor, waits until #output has the expected text, and then asserts it equals 'Object: {\"name\":\"John\",\"age\":30}'."
+        },
+        {
+          "methodName": "testArray",
+          "label": "Verify JavaScript array handling output",
+          "description": "Calls arrayMethod() on the page and asserts that the #output element text is 'Array: [1,2,3,4,5]'."
+        }
+      ]
+    }
+  ]
+}
